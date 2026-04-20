@@ -1,0 +1,107 @@
+/* ============================================================
+   Primitives — raw values, no semantics
+   Never reference these directly in components; use tokens.
+   ============================================================ */
+
+:root {
+  /* --- Color Palette --- */
+
+  /* Neutrals */
+  --primitive-white: #ffffff;
+  --primitive-gray-50: #f7f7f5;
+  --primitive-gray-100: #eeede9;
+  --primitive-gray-200: #d9d7d0;
+  --primitive-gray-300: #b3b0a8;
+  --primitive-gray-500: #7a7873;
+  --primitive-gray-700: #4a4845;
+  --primitive-gray-900: #1e1d1b;
+  --primitive-black: #0f0f0e;
+
+  /* Greens */
+  --primitive-green-100: #cdd16f;
+  --primitive-green-300: #81b64c;
+  --primitive-green-400: #6da03e;
+  --primitive-green-500: #769656;
+  --primitive-green-600: #557a45;
+  --primitive-green-800: #312e2b;
+  --primitive-green-950: #1e1a17;
+
+  /* Board squares (classic wood) */
+  --primitive-board-tan: #f0d9b5;
+  --primitive-board-brown: #b58863;
+
+  /* Status */
+  --primitive-red-500: #c0392b;
+  --primitive-red-100: #f5c6c2;
+  --primitive-orange-500: #e67e22;
+  --primitive-emerald-500: #27ae60;
+  --primitive-blue-500: #2980b9;
+
+  /* --- Spacing --- */
+  --primitive-space-1: 4px;
+  --primitive-space-2: 8px;
+  --primitive-space-3: 12px;
+  --primitive-space-4: 16px;
+  --primitive-space-5: 20px;
+  --primitive-space-6: 24px;
+  --primitive-space-8: 32px;
+  --primitive-space-10: 40px;
+  --primitive-space-12: 48px;
+  --primitive-space-16: 64px;
+  --primitive-space-20: 80px;
+  --primitive-space-24: 96px;
+
+  /* --- Typography --- */
+  --primitive-font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --primitive-font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --primitive-text-xs: 0.75rem;
+  --primitive-text-sm: 0.875rem;
+  --primitive-text-base: 1rem;
+  --primitive-text-lg: 1.125rem;
+  --primitive-text-xl: 1.25rem;
+  --primitive-text-2xl: 1.5rem;
+  --primitive-text-3xl: 1.875rem;
+  --primitive-text-4xl: 2.25rem;
+
+  --primitive-font-normal: 400;
+  --primitive-font-medium: 500;
+  --primitive-font-semibold: 600;
+  --primitive-font-bold: 700;
+
+  --primitive-leading-tight: 1.25;
+  --primitive-leading-normal: 1.5;
+  --primitive-leading-loose: 1.75;
+
+  /* --- Border Radius --- */
+  --primitive-radius-sm: 4px;
+  --primitive-radius-md: 8px;
+  --primitive-radius-lg: 12px;
+  --primitive-radius-xl: 16px;
+  --primitive-radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --primitive-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --primitive-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --primitive-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --primitive-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.22);
+
+  /* --- Z-Index --- */
+  --primitive-z-below: -1;
+  --primitive-z-0: 0;
+  --primitive-z-10: 10;
+  --primitive-z-100: 100;
+  --primitive-z-200: 200;
+  --primitive-z-300: 300;
+  --primitive-z-400: 400;
+  --primitive-z-500: 500;
+
+  /* --- Easing --- */
+  --primitive-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --primitive-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --primitive-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  --primitive-duration-fast: 100ms;
+  --primitive-duration-base: 200ms;
+  --primitive-duration-slow: 350ms;
+}

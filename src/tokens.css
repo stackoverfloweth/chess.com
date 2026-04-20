@@ -1,0 +1,135 @@
+/* ============================================================
+   Tokens — semantic abstractions over primitives
+   These are what components and styles should reference.
+   ============================================================ */
+
+:root {
+  /* --- Color: Board --- */
+  --color-board-light: var(--primitive-board-tan);
+  --color-board-dark: var(--primitive-board-brown);
+  --color-board-highlight: rgba(20, 85, 30, 0.5);
+  --color-board-selected: rgba(20, 85, 30, 0.8);
+  --color-board-last-move: rgba(155, 199, 0, 0.41);
+
+  /* --- Color: Brand --- */
+  --color-brand: var(--primitive-green-300);
+  --color-brand-hover: var(--primitive-green-400);
+  --color-brand-subtle: var(--primitive-green-100);
+
+  /* --- Color: Status --- */
+  --color-danger: var(--primitive-red-500);
+  --color-danger-subtle: var(--primitive-red-100);
+  --color-warning: var(--primitive-orange-500);
+  --color-success: var(--primitive-emerald-500);
+  --color-info: var(--primitive-blue-500);
+
+  /* --- Surface (light theme) --- */
+  --surface-page: var(--primitive-gray-50);
+  --surface-card: var(--primitive-white);
+  --surface-raised: var(--primitive-white);
+  --surface-overlay: rgba(0, 0, 0, 0.45);
+  --surface-border: var(--primitive-gray-200);
+  --surface-border-strong: var(--primitive-gray-300);
+
+  /* --- Text (light theme) --- */
+  --text-primary: var(--primitive-gray-900);
+  --text-secondary: var(--primitive-gray-500);
+  --text-disabled: var(--primitive-gray-300);
+  --text-inverted: var(--primitive-white);
+  --text-link: var(--color-brand);
+  --text-link-hover: var(--color-brand-hover);
+  --text-danger: var(--color-danger);
+
+  /* --- Controls (light theme) --- */
+  --control-bg: var(--primitive-white);
+  --control-border: var(--primitive-gray-300);
+  --control-focus-ring: var(--color-brand);
+
+  /* --- Spacing aliases --- */
+  --space-1: var(--primitive-space-1);
+  --space-2: var(--primitive-space-2);
+  --space-3: var(--primitive-space-3);
+  --space-4: var(--primitive-space-4);
+  --space-5: var(--primitive-space-5);
+  --space-6: var(--primitive-space-6);
+  --space-8: var(--primitive-space-8);
+  --space-10: var(--primitive-space-10);
+  --space-12: var(--primitive-space-12);
+  --space-16: var(--primitive-space-16);
+  --space-20: var(--primitive-space-20);
+  --space-24: var(--primitive-space-24);
+
+  /* --- Typography aliases --- */
+  --font-sans: var(--primitive-font-sans);
+  --font-mono: var(--primitive-font-mono);
+
+  --text-xs: var(--primitive-text-xs);
+  --text-sm: var(--primitive-text-sm);
+  --text-base: var(--primitive-text-base);
+  --text-lg: var(--primitive-text-lg);
+  --text-xl: var(--primitive-text-xl);
+  --text-2xl: var(--primitive-text-2xl);
+  --text-3xl: var(--primitive-text-3xl);
+  --text-4xl: var(--primitive-text-4xl);
+
+  --font-normal: var(--primitive-font-normal);
+  --font-medium: var(--primitive-font-medium);
+  --font-semibold: var(--primitive-font-semibold);
+  --font-bold: var(--primitive-font-bold);
+
+  --leading-tight: var(--primitive-leading-tight);
+  --leading-normal: var(--primitive-leading-normal);
+  --leading-loose: var(--primitive-leading-loose);
+
+  /* --- Radius aliases --- */
+  --radius-sm: var(--primitive-radius-sm);
+  --radius-md: var(--primitive-radius-md);
+  --radius-lg: var(--primitive-radius-lg);
+  --radius-xl: var(--primitive-radius-xl);
+  --radius-full: var(--primitive-radius-full);
+
+  /* --- Shadow aliases --- */
+  --shadow-sm: var(--primitive-shadow-sm);
+  --shadow-md: var(--primitive-shadow-md);
+  --shadow-lg: var(--primitive-shadow-lg);
+  --shadow-xl: var(--primitive-shadow-xl);
+  --shadow-board: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+  /* --- Z-index aliases --- */
+  --z-below: var(--primitive-z-below);
+  --z-base: var(--primitive-z-0);
+  --z-raised: var(--primitive-z-10);
+  --z-sticky: var(--primitive-z-100);
+  --z-overlay: var(--primitive-z-200);
+  --z-modal: var(--primitive-z-300);
+  --z-toast: var(--primitive-z-400);
+  --z-tooltip: var(--primitive-z-500);
+
+  /* --- Transitions --- */
+  --ease-default: var(--primitive-ease-standard);
+  --ease-out: var(--primitive-ease-out);
+  --ease-in: var(--primitive-ease-in);
+  --duration-fast: var(--primitive-duration-fast);
+  --duration-base: var(--primitive-duration-base);
+  --duration-slow: var(--primitive-duration-slow);
+  --transition-base: var(--duration-base) var(--ease-default);
+}
+
+/* --- Dark Theme --- */
+[data-theme="dark"],
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-page: var(--primitive-green-950);
+    --surface-card: var(--primitive-green-800);
+    --surface-raised: var(--primitive-gray-700);
+    --surface-border: var(--primitive-gray-700);
+    --surface-border-strong: var(--primitive-gray-500);
+
+    --text-primary: var(--primitive-gray-100);
+    --text-secondary: var(--primitive-gray-300);
+    --text-disabled: var(--primitive-gray-500);
+
+    --control-bg: var(--primitive-gray-900);
+    --control-border: var(--primitive-gray-700);
+  }
+}
