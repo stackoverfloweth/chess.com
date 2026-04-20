@@ -1,28 +1,52 @@
-Google drive .zip link: https://drive.google.com/drive/folders/1aPo8sOrrelZmKKLek2ak4aR6JCSKdHtH
+# Stackoverfloweth's Chess.com
 
-# Chess.com - Front End Programming Challenge
+This is [@stackoverfloweth](https://github.com/stackoverfloweth)'s solution to the [Chess.com](https://chess.com) front end programming challenge.
 
-Welcome to the [Chess.com](https://chess.com) front end programming challenge!
+## Requirements
 
-## Instructions
+- [x] Create a page with a chessboard and a sidebar.
+- [x] On desktop devices the sidebar should be positioned to the right of the chessboard.
+- [x] On mobile devices the sidebar should be positioned below the chessboard.
+- [x] The chessboard should resize to always fill available space both vertically and horizontally. It should always be fully visible in the viewport, down to a minimum size of 264x264px
+- [x] Clicking a chessboard square should highlight the square. Multiple squares can appear as highlighted at once.
+- [x] The sidebar should display a log of which squares have been clicked and the order in which they're clicked.
+- [x] Clicking a highlighted square should un-highlight the square but not modify the sidebar. Re-highlighting the square again adds a new entry to the sidebar.
+- [x] Include tests.
 
-1. Create a VueJS application that satisfies the requirements detailed below.
-2. Create a .zip file containing all files of your completed project.
-3. Submit your .zip file (downloadable link or email attachment) and a link to a live demo of your project.
+## Installation
 
-## Application Requirements
+this project uses [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions. Alternatively, set node to v24.14.0 in your shell.
 
-1. Create a page with a chessboard and a sidebar.
-2. On desktop devices the sidebar should be positioned to the right of the chessboard.
-3. On mobile devices the sidebar should be positioned below the chessboard.
-4. The chessboard should resize to always fill available space both vertically and horizontally. It should always be fully visible in the viewport, down to a minimum size of 264x264px
-5. Clicking a chessboard square should highlight the square. Multiple squares can appear as highlighted at once.
-6. The sidebar should display a log of which squares have been clicked and the order in which they're clicked.
-7. Clicking a highlighted square should un-highlight the square but not modify the sidebar. Re-highlighting the square again adds a new entry to the sidebar.
-8. Include tests.
+```bash
+nvm use
+npm install
+```
 
-Your submission will be rejected if any requirement is not met. Ask questions if a requirement is unclear.
+## Running the app
+
+this project uses [Vite](https://vite.dev/) for development.
+
+```bash
+npm run dev
+```
+
+## Running the tests
+
+this project uses [Vitest](https://vitest.dev/) for testing. It uses [Playwright](https://playwright.dev/) for browser testing.
+
+```bash
+npm run test
+```
+
+## Linting & formatting
+
+this project uses [oxlint](https://github.com/oxlint/oxlint) for linting and [oxfmt](https://github.com/oxlint/oxfmt) for formatting.
+
+```bash
+npm run lint
+npm run format
+```
 
 ## Questions & Feedback
 
-Please contact Nick Kampa (nkampa@chess.com) with any questions or feedback regarding this challenge.
+Please free to contact me, Evan Sutheland (<ev@nsuther.land>), with any questions or feedback.
