@@ -33,9 +33,7 @@ function handleSquareClick(): void {
 </script>
 
 <template>
-  <button type="button" class="chess-square" :class="classes" @click="handleSquareClick">
-    <span>{{ position.file }}{{ position.rank }}</span>
-  </button>
+  <button type="button" class="chess-square" :class="classes" @click="handleSquareClick" />
 </template>
 
 <style>
