@@ -7,17 +7,19 @@ createActivityLog()
 </script>
 
 <template>
-  <SideNav class="app__side-nav" />
   <ChessBoard class="app__chess-board" />
+  <SideNav class="app__side-nav" />
 </template>
 
 <style>
 #app {
+  background-color: var(--surface-page);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: var(--space-4);
+  justify-content: center;
+  gap: var(--space-2);
   width: 100%;
 }
 </style>

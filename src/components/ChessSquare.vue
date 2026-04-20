@@ -34,7 +34,7 @@ function handleSquareClick(): void {
 
 <template>
   <button type="button" class="chess-square" :class="classes" @click="handleSquareClick">
-    {{ JSON.stringify(position, null, 2) }}
+    <span>{{ position.file }}{{ position.rank }}</span>
   </button>
 </template>
 
@@ -44,6 +44,9 @@ function handleSquareClick(): void {
 
   aspect-ratio: 1 / 1;
   background-color: var(--square-color);
+  display: flex;
+  place-items: center;
+  place-content: center;
   white-space: pre-wrap;
 }
 
