@@ -1,5 +1,5 @@
 import type { Position } from "@/types/position"
-import { ref, type Ref, provide, inject, type InjectionKey } from "vue"
+import { ref, type Ref, provide, inject, getCurrentInstance, type InjectionKey } from "vue"
 
 export type ActivityLog = {
   position: Position
@@ -15,7 +15,7 @@ export type UseActivityLog = {
 export const ACTIVITY_LOG_KEY: InjectionKey<UseActivityLog> = Symbol("activityLog")
 
 export function useActivityLog() {
-  const existing = inject(ACTIVITY_LOG_KEY)
+  const existing = getCurrentInstance() ? inject(ACTIVITY_LOG_KEY) : null
 
   if (!existing) {
     throw new Error("Activity log not found")
@@ -41,7 +41,9 @@ export function createActivityLog(): UseActivityLog {
     reset,
   } satisfies UseActivityLog
 
-  provide(ACTIVITY_LOG_KEY, activityLog)
+  if (getCurrentInstance()) {
+    provide(ACTIVITY_LOG_KEY, activityLog)
+  }
 
   return activityLog
 }

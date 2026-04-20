@@ -1,4 +1,4 @@
-import { ref, watch, provide, inject, type InjectionKey, type Ref, computed } from "vue"
+import { ref, watch, provide, inject, getCurrentInstance, type InjectionKey, type Ref } from "vue"
 
 export type Theme = "light" | "dark"
 
@@ -10,7 +10,7 @@ export type UseTheme = {
 export const THEME_KEY: InjectionKey<UseTheme> = Symbol("theme")
 
 export function useTheme(): UseTheme {
-  const existing = inject(THEME_KEY)
+  const existing = getCurrentInstance() ? inject(THEME_KEY) : null
 
   if (!existing) {
     throw new Error("Theme not found")
@@ -19,20 +19,19 @@ export function useTheme(): UseTheme {
   return existing
 }
 
-const stored = computed({
-  get() {
-    const stored = localStorage.getItem("theme")
+function getStoredTheme(): Theme | null {
+  const stored = localStorage.getItem("theme")
 
-    if (stored === "light" || stored === "dark") {
-      return stored
-    }
+  if (stored === "light" || stored === "dark") {
+    return stored
+  }
 
-    return getDefaultTheme()
-  },
-  set(value) {
-    localStorage.setItem("theme", value)
-  },
-})
+  return null
+}
+
+function setStoredTheme(value: Theme): void {
+  localStorage.setItem("theme", value)
+}
 
 function getDefaultTheme(): Theme {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -41,13 +40,13 @@ function getDefaultTheme(): Theme {
 }
 
 export function createTheme(): UseTheme {
-  const theme = ref<Theme>(stored.value ?? getDefaultTheme())
+  const theme = ref<Theme>(getStoredTheme() ?? getDefaultTheme())
 
   watch(
     theme,
     (value) => {
       document.documentElement.setAttribute("data-theme", value)
-      stored.value = value
+      setStoredTheme(value)
     },
     { immediate: true },
   )
@@ -58,7 +57,9 @@ export function createTheme(): UseTheme {
 
   const themeState = { theme, toggle } satisfies UseTheme
 
-  provide(THEME_KEY, themeState)
+  if (getCurrentInstance()) {
+    provide(THEME_KEY, themeState)
+  }
 
   return themeState
 }

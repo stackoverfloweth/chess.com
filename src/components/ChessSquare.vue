@@ -46,6 +46,7 @@ function handleSquareClick(): void {
   place-items: center;
   place-content: center;
   white-space: pre-wrap;
+  transition: background-color var(--duration-slow) var(--ease-out);
 }
 
 .chess-square--dark {

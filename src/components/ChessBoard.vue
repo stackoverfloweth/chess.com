@@ -15,13 +15,13 @@ import { FILES, RANKS } from "@/types/position"
       </div>
 
       <template v-for="rank in [...RANKS].reverse()" :key="rank">
-        <span class="chess-board__label">{{ rank }}</span>
+        <span class="chess-board__label chess-board__label--rank">{{ rank }}</span>
       </template>
 
       <div class="chess-board__corner" />
 
       <template v-for="file in FILES" :key="file">
-        <span class="chess-board__label">{{ file }}</span>
+        <span class="chess-board__label chess-board__label--file">{{ file }}</span>
       </template>
     </div>
   </div>
@@ -30,13 +30,13 @@ import { FILES, RANKS } from "@/types/position"
 <style>
 .chess-board {
   width: min(100%, 100cqh);
-  min-width: 264px;
-  min-height: 264px;
   padding: var(--space-6);
 }
 
 .chess-board__grid {
   display: grid;
+  min-width: 264px;
+  min-height: 264px;
   grid-template-columns: auto repeat(8, minmax(0, 1fr));
   grid-template-rows: repeat(8, minmax(0, 1fr)) auto;
 }
@@ -53,11 +53,18 @@ import { FILES, RANKS } from "@/types/position"
 
 .chess-board__label {
   display: flex;
-  padding: var(--space-2);
   place-items: center;
   place-content: center;
   font-weight: var(--font-medium);
   color: var(--text-secondary);
+}
+
+.chess-board__label--rank {
+  margin-right: var(--space-2);
+}
+
+.chess-board__label--file {
+  margin-top: var(--space-2);
 }
 
 .chess-board__corner {

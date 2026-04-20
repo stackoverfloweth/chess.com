@@ -9,12 +9,14 @@ createTheme()
 </script>
 
 <template>
-  <ChessBoard class="app__chess-board" />
-  <SideNav class="app__side-nav" />
+  <div class="app">
+    <ChessBoard class="app__chess-board" />
+    <SideNav class="app__side-nav" />
+  </div>
 </template>
 
 <style>
-#app {
+.app {
   background-color: var(--surface-page);
   display: flex;
   flex-wrap: wrap;

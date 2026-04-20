@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vitest
+playwright-report
+test-results
+.vitest-attachments
+__screenshots__
