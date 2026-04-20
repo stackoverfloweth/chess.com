@@ -2,7 +2,7 @@
 import { useActivityLog } from "@/composables/useActivityLog"
 import SideNavItem from "@/components/SideNavItem.vue"
 
-const { state } = useActivityLog()
+const { state, reset } = useActivityLog()
 </script>
 
 <template>
@@ -21,6 +21,17 @@ const { state } = useActivityLog()
         />
       </template>
     </ul>
+
+    <div class="side-nav__actions">
+      <button
+        :disabled="state.length === 0"
+        type="button"
+        class="side-nav__log-button"
+        @click="reset"
+      >
+        Clear
+      </button>
+    </div>
   </aside>
 </template>
 
@@ -53,5 +64,24 @@ const { state } = useActivityLog()
   font-style: italic;
   padding: var(--space-2);
   color: var(--text-secondary);
+}
+
+.side-nav__actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+}
+
+.side-nav__log-button {
+  color: var(--color-brand);
+  padding-inline: var(--space-1);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.side-nav__log-button:hover {
+  color: var(--color-brand-hover);
+  background-color: hsl(from var(--color-brand-hover) h s l / 0.2);
+  border-color: var(--color-brand-hover);
 }
 </style>

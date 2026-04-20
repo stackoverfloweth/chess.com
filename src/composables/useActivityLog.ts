@@ -9,6 +9,7 @@ export type ActivityLog = {
 export type UseActivityLog = {
   state: Ref<ActivityLog[]>
   push: (position: Position) => void
+  reset: () => void
 }
 
 export const ACTIVITY_LOG_KEY: InjectionKey<UseActivityLog> = Symbol("activityLog")
@@ -30,9 +31,14 @@ export function createActivityLog(): UseActivityLog {
     state.value.push({ position, timestamp: Date.now() })
   }
 
+  function reset(): void {
+    state.value = []
+  }
+
   const activityLog = {
     state,
     push,
+    reset,
   } satisfies UseActivityLog
 
   provide(ACTIVITY_LOG_KEY, activityLog)
