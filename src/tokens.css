@@ -7,9 +7,6 @@
   /* --- Color: Board --- */
   --color-board-light: var(--primitive-board-tan);
   --color-board-dark: var(--primitive-board-brown);
-  --color-board-highlight: rgba(20, 85, 30, 0.5);
-  --color-board-selected: rgba(20, 85, 30, 0.8);
-  --color-board-last-move: rgba(155, 199, 0, 0.41);
 
   /* --- Color: Brand --- */
   --color-brand: var(--primitive-green-300);
