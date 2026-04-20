@@ -1,0 +1,25 @@
+{
+  "name": "chess-frontend-tests",
+  "description": "FrontEnd Programming Challenge for Chess.com",
+  "license": "MIT",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint src"
+  },
+  "dependencies": {
+    "vue": "^3.5.32"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vue/tsconfig": "^0.9.1",
+    "oxlint": "^1.60.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.9",
+    "vue-tsc": "^3.2.7"
+  }
+}
