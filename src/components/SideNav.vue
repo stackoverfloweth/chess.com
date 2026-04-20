@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useActivityLog } from "@/composables/useActivityLog"
+import { useTheme } from "@/composables/useTheme"
 import SideNavItem from "@/components/SideNavItem.vue"
 
 const { state, reset } = useActivityLog()
+const { theme, toggle } = useTheme()
 </script>
 
 <template>
@@ -31,6 +33,8 @@ const { state, reset } = useActivityLog()
       >
         Clear
       </button>
+
+      <button type="button" class="side-nav__log-button" @click="toggle">{{ theme }} Mode</button>
     </div>
   </aside>
 </template>
@@ -77,6 +81,7 @@ const { state, reset } = useActivityLog()
   padding-inline: var(--space-1);
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
+  text-transform: capitalize;
 }
 
 .side-nav__log-button:hover {

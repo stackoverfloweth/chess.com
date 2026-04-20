@@ -26,9 +26,14 @@
   --primitive-green-800: #312e2b;
   --primitive-green-950: #1e1a17;
 
-  /* Board squares (classic wood) */
-  --primitive-board-tan: #f0d9b5;
-  --primitive-board-brown: #b58863;
+  /* Browns */
+  --primitive-brown-100: #e8dbc9; /* pale beige-tan */
+  --primitive-brown-300: #c9a47b; /* warm light brown */
+  --primitive-brown-400: #b4845a; /* mid warm brown */
+  --primitive-brown-500: #956743; /* classic medium brown */
+  --primitive-brown-600: #755034; /* deep brown, good with green-600 */
+  --primitive-brown-800: #3e2a1f; /* very dark, pairs with green-800 */
+  --primitive-brown-950: #221712; /* near-black brown, like green-950 */
 
   /* Status */
   --primitive-red-500: #c0392b;

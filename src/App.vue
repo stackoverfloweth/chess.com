@@ -2,8 +2,10 @@
 import ChessBoard from "@/components/ChessBoard.vue"
 import SideNav from "@/components/SideNav.vue"
 import { createActivityLog } from "@/composables/useActivityLog"
+import { createTheme } from "@/composables/useTheme"
 
 createActivityLog()
+createTheme()
 </script>
 
 <template>
